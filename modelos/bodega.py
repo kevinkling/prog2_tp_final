@@ -1,12 +1,28 @@
+from modelos.entidad_vineria import EntidadVineria
+# from vino import *
+# from modelos.cepa import *
+# from vinoteca import Vinoteca
+import vinoteca
+
 import json
 
 
-class Bodega:
+class Bodega(EntidadVineria):
 
-    def __repr__(self):
-        return json.dumps(self.convertirAJSON())
-
-    def convertirAJSON(self):
+    def __init__(self, id, nombre) -> None:
+         super().__init__(id, nombre)
+         
+    # Comandos
+    
+    # Consultas
+    
+    def obtenerVinos(self) : #-> list[Vino]
+        return vinoteca.Vinoteca.obtenerVinos()
+    
+    def obtenerCepas(self)  : #-> list[Cepa]
+        return vinoteca.Vinoteca.obtenerCepas()
+    
+    def convertirAJSON(self) -> dict:
         return {
             "id": self.obtenerId(),
             "nombre": self.obtenerNombre(),
@@ -14,7 +30,7 @@ class Bodega:
             "vinos": len(self.obtenerVinos()),
         }
 
-    def convertirAJSONFull(self):
+    def convertirAJSONFull(self) -> dict:
         return {
             "id": self.obtenerId(),
             "nombre": self.obtenerNombre(),
@@ -24,6 +40,7 @@ class Bodega:
 
     def __mapearCepas(self):
         cepas = self.obtenerCepas()
+        print(cepas)
         cepasMapa = map(lambda a: a.obtenerNombre(), cepas)
         return list(cepasMapa)
 
@@ -31,3 +48,6 @@ class Bodega:
         vinos = self.obtenerVinos()
         vinosMapa = map(lambda a: a.obtenerNombre(), vinos)
         return list(vinosMapa)
+
+    def __repr__(self):
+            return json.dumps(self.convertirAJSON())

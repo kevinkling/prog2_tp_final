@@ -19,19 +19,22 @@ class Vinoteca:
         datos = Vinoteca.__parsearArchivoDeDatos()
         Vinoteca.__convertirJsonAListas(datos)
 
+    # Consultas
+    
     def obtenerBodegas(orden=None, reverso=False):
         if isinstance(orden, str):
             if orden == "nombre":
                 pass  # completar
             elif orden == "vinos":
                 pass  # completar
-        pass  # completar
+        return Vinoteca.__bodegas
 
     def obtenerCepas(orden=None, reverso=False):
         if isinstance(orden, str):
             if orden == "nombre":
                 pass  # completar
-        pass  # completar
+        return Vinoteca.__cepas
+
 
     def obtenerVinos(anio=None, orden=None, reverso=False):
         if isinstance(anio, int):
@@ -43,7 +46,7 @@ class Vinoteca:
                 pass  # completar
             elif orden == "cepas":
                 pass  # completar
-        pass  # completar
+        return Vinoteca.__vinos
 
     def buscarBodega(id):
         pass  # completar
@@ -55,7 +58,17 @@ class Vinoteca:
         pass  # completar
 
     def __parsearArchivoDeDatos():
-        pass  # completar
+        # Abre el archivo JSON
+        with open(Vinoteca.__archivoDeDatos, 'r', encoding='utf-8') as archivo:
+            # Retorna el contenido del archivo JSON
+            return json.load(archivo)
 
     def __convertirJsonAListas(lista):
-        pass  # completar
+        for bodega in lista["bodegas"] :
+            Vinoteca.__bodegas.append(Bodega(bodega["id"], bodega["nombre"]))
+        
+        for cepa in lista["cepas"] :
+            Vinoteca.__cepas.append(Cepa(cepa["id"], cepa["nombre"]))
+        
+        for vino in lista["vinos"] :
+            Vinoteca.__vinos.append(Vino(vino["id"], vino["nombre"], vino["bodega"], vino["cepas"], vino["partidas"]))

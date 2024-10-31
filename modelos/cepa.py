@@ -1,19 +1,28 @@
+from .entidad_vineria import *
+# from vino import *
 import json
 
 
-class Cepa:
+class Cepa(EntidadVineria):
 
-    def __repr__(self):
-        return json.dumps({"nombre": self.obtenerNombre()})
+    def __init__(self, id, nombre) -> None:
+        super().__init__(id, nombre)
+        
+    # Comandos
+    
+    # Consultas
+    
+    def obtenerVinos(self)  : #-> list[Vino] #TODO
+        pass
 
-    def convertirAJSON(self):
+    def convertirAJSON(self) -> dict:
         return {
             "id": self.obtenerId(),
             "nombre": self.obtenerNombre(),
             "vinos": len(self.obtenerVinos()),
         }
 
-    def convertirAJSONFull(self):
+    def convertirAJSONFull(self) -> dict:
         return {
             "id": self.obtenerId(),
             "nombre": self.obtenerNombre(),
@@ -30,3 +39,6 @@ class Cepa:
             vinos,
         )
         return list(vinosMapa)
+
+    def __repr__(self):
+        return json.dumps({"nombre": self.obtenerNombre()})
