@@ -1,7 +1,8 @@
 from .entidad_vineria import *
-# from .bodega import *
-# from .cepa import *
+from .bodega import *
+from .cepa import *
 import json
+import vinoteca
 
 
 class Vino(EntidadVineria):
@@ -25,11 +26,18 @@ class Vino(EntidadVineria):
     
     # Consultas
 
-    def obtenerBodega(self)  :#-> Bodega #TODO
-        pass
+    def obtenerBodega(self) -> Bodega : #NOTE - LISTO
+        return vinoteca.Vinoteca.buscarBodega(self.__bodega)
     
-    def obtenerCepas(self)  : #-> list[Cepa] #TODO
-        pass
+    def obtenerCepas(self) -> list[Cepa] : #-> list[Cepa] # PROBAR
+        todas_las_cepas = vinoteca.Vinoteca.obtenerCepas()
+        cepas: list[Cepa] = []
+        
+        for cepa in todas_las_cepas :
+            for cepaID in self.__cepas :
+                if cepa.obtenerId() == cepaID :
+                    cepas.append(cepa)
+        return cepas
     
     def obtenerPartidas(self) -> list[int] :
         return self.__partidas

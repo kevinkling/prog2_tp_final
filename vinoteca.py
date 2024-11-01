@@ -11,9 +11,9 @@ from modelos.vino import Vino
 class Vinoteca:
 
     __archivoDeDatos = "vinoteca.json"
-    __bodegas = []
-    __cepas = []
-    __vinos = []
+    __bodegas: list[Bodega] = []
+    __cepas: list[Cepa] = []
+    __vinos: list[Vino] = []
 
     def inicializar():
         datos = Vinoteca.__parsearArchivoDeDatos()
@@ -21,7 +21,7 @@ class Vinoteca:
 
     # Consultas
     
-    def obtenerBodegas(orden=None, reverso=False):
+    def obtenerBodegas(orden=None, reverso=False) -> list[Bodega]:
         if isinstance(orden, str):
             if orden == "nombre":
                 pass  # completar
@@ -29,14 +29,14 @@ class Vinoteca:
                 pass  # completar
         return Vinoteca.__bodegas
 
-    def obtenerCepas(orden=None, reverso=False):
+    def obtenerCepas(orden=None, reverso=False) -> list[Cepa]:
         if isinstance(orden, str):
             if orden == "nombre":
                 pass  # completar
         return Vinoteca.__cepas
 
 
-    def obtenerVinos(anio=None, orden=None, reverso=False):
+    def obtenerVinos(anio=None, orden=None, reverso=False) -> list[Vino]:
         if isinstance(anio, int):
             pass  # completar
         if isinstance(orden, str):
@@ -48,11 +48,17 @@ class Vinoteca:
                 pass  # completar
         return Vinoteca.__vinos
 
-    def buscarBodega(id):
-        pass  # completar
+    def buscarBodega(id:str): #PROBAR - 
+        for bodega in Vinoteca.__bodegas :
+            if bodega.obtenerId() == id :
+                return bodega
+        return None 
 
-    def buscarCepa(id):
-        pass  # completar
+    def buscarCepa(id:str): #PROBAR - 
+        for cepa in Vinoteca.__cepas :
+            if cepa.obtenerId() == id :
+                return cepa
+        return None 
 
     def buscarVino(id):
         pass  # completar

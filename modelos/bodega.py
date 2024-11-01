@@ -16,11 +16,20 @@ class Bodega(EntidadVineria):
     
     # Consultas
     
-    def obtenerVinos(self) : #-> list[Vino]
-        return vinoteca.Vinoteca.obtenerVinos()
+    def obtenerVinos(self) : #-> list[Vino] #PROBAR - 
+        todos_los_vinos = vinoteca.Vinoteca.obtenerVinos()
+        vinos_pertenece = []
+        for vino in todos_los_vinos :
+            if vino.obtenerBodega() == self.obtenerId() :
+                vinos_pertenece.append(vino)
+        return vinos_pertenece
     
-    def obtenerCepas(self)  : #-> list[Cepa]
-        return vinoteca.Vinoteca.obtenerCepas()
+    def obtenerCepas(self)  : #-> list[Cepa] #TODO
+        # todas_las_cepas = vinoteca.Vinoteca.obtenerCepas()
+        # cepas_pertenece = []
+        # for cepa in todas_las_cepas :
+        #     if cepa.obtene
+        return  vinoteca.Vinoteca.obtenerCepas()
     
     def convertirAJSON(self) -> dict:
         return {
