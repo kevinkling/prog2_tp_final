@@ -22,66 +22,46 @@ class Vinoteca:
     # Consultas
     
     def obtenerBodegas(orden=None, reverso=False) -> list[Bodega]:
-        bodegas = Vinoteca.__bodegas.copy() # Hago una copia (tambien sirve [:]) de la lista para no tocar la original
         if isinstance(orden, str):
             if orden == "nombre":
-                bodegas.sort(key=lambda nombre: nombre.obtenerNombre()) # Uso una lambda para ordenar por el atributo nombre
+                pass  # completar
             elif orden == "vinos":
-                pass # completar #FIXME - PREGUNTAR PROFE
-        if reverso :
-            bodegas.reverse()
-        
-        return bodegas 
+                pass  # completar
+        return Vinoteca.__bodegas
 
     def obtenerCepas(orden=None, reverso=False) -> list[Cepa]:
-        cepas = Vinoteca.__cepas.copy()
         if isinstance(orden, str):
             if orden == "nombre":
-                cepas.sort(key=lambda cepa: cepa.obtenerNombre())
-        if reverso :
-            cepas.reverse()
-            
-        return cepas
+                pass  # completar
+        return Vinoteca.__cepas
+
 
     def obtenerVinos(anio=None, orden=None, reverso=False) -> list[Vino]:
-        vinos = []
         if isinstance(anio, int):
-            for vino in Vinoteca.__vinos :
-                if anio in vino.obtenerPartidas() :
-                    vinos.append(vino)
-        else :
-            vinos = Vinoteca.__vinos.copy()
-
+            pass  # completar
         if isinstance(orden, str):
             if orden == "nombre":
-                vinos.sort(key=lambda nombre: nombre.obtenerNombre())
+                pass  # completar
             elif orden == "bodega":
-                vinos.sort(key=lambda bodega: bodega.obtenerBodega().obtenerNombre())
+                pass  # completar
             elif orden == "cepas":
-                pass  # completar #FIXME - PREGUNTAR PROFE
-        
-        if reverso :
-            vinos.reverse()
-        
-        return vinos
+                pass  # completar
+        return Vinoteca.__vinos
 
-    def buscarBodega(id:str) -> Bodega:
+    def buscarBodega(id:str): #PROBAR - 
         for bodega in Vinoteca.__bodegas :
             if bodega.obtenerId() == id :
                 return bodega
         return None 
 
-    def buscarCepa(id:str) -> Cepa:
+    def buscarCepa(id:str): #PROBAR - 
         for cepa in Vinoteca.__cepas :
             if cepa.obtenerId() == id :
                 return cepa
         return None 
 
-    def buscarVino(id) -> Vino:
-        for vino in Vinoteca.__vinos :
-            if vino.obtenerId() == id :
-                return vino
-        return None 
+    def buscarVino(id):
+        pass  # completar
 
     def __parsearArchivoDeDatos():
         # Abre el archivo JSON
