@@ -1,5 +1,5 @@
 from modelos.entidad_vineria import EntidadVineria
-# from vino import *
+# from .vino import Vino
 # from modelos.cepa import *
 # from vinoteca import Vinoteca
 import vinoteca
@@ -16,20 +16,23 @@ class Bodega(EntidadVineria):
     
     # Consultas
     
-    def obtenerVinos(self) : #-> list[Vino] #PROBAR - 
+    def obtenerVinos(self)  : #-> list[Vino] 
+        """ Vinos que estan en la bodega """
         todos_los_vinos = vinoteca.Vinoteca.obtenerVinos()
         vinos_pertenece = []
         for vino in todos_los_vinos :
-            if vino.obtenerBodega() == self.obtenerId() :
+            if vino.obtenerBodega().obtenerId() == self.obtenerId() :
                 vinos_pertenece.append(vino)
         return vinos_pertenece
     
-    def obtenerCepas(self)  : #-> list[Cepa] #TODO
-        # todas_las_cepas = vinoteca.Vinoteca.obtenerCepas()
-        # cepas_pertenece = []
-        # for cepa in todas_las_cepas :
-        #     if cepa.obtene
-        return  vinoteca.Vinoteca.obtenerCepas()
+    def obtenerCepas(self)  : #-> list[Cepa]
+        """ Cepas que estan en la bodega """
+        cepas_pertenece = []
+        for vino in self.obtenerVinos() :
+            for cepa in vino.obtenerCepas() :
+                if cepa not in cepas_pertenece :
+                   cepas_pertenece.append(cepa)
+        return cepas_pertenece
     
     def convertirAJSON(self) -> dict:
         return {
