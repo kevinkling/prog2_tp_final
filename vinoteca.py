@@ -27,7 +27,7 @@ class Vinoteca:
             if orden == "nombre":
                 bodegas.sort(key=lambda nombre: nombre.obtenerNombre()) # Uso una lambda para ordenar por el atributo nombre
             elif orden == "vinos":
-                pass # completar #FIXME - PREGUNTAR PROFE
+                bodegas.sort(key=lambda bodega: len(bodega.obtenerVinos()))  # Uso una lambda para ordenar por la cantidad de vinos
         if reverso :
             bodegas.reverse()
         
@@ -58,7 +58,7 @@ class Vinoteca:
             elif orden == "bodega":
                 vinos.sort(key=lambda bodega: bodega.obtenerBodega().obtenerNombre())
             elif orden == "cepas":
-                pass  # completar #FIXME - PREGUNTAR PROFE
+                vinos.sort(key=lambda vino: len(vino.obtenerCepas()))
         
         if reverso :
             vinos.reverse()
