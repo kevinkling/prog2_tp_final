@@ -1,0 +1,716 @@
+{
+	"info": {
+		"_postman_id": "0c76d4fd-fa37-4d97-92a8-04db38af9b31",
+		"name": "TP FInal Programcion 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39439857"
+	},
+	"item": [
+		{
+			"name": "Test Profe",
+			"item": [
+				{
+					"name": "1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/bodegas/a0900e61-0f72-67ae-7e9d-4218da29b7d8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"bodegas",
+								"a0900e61-0f72-67ae-7e9d-4218da29b7d8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/cepas/33ccaa9d-4710-9942-002d-1b5cb9912e5d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cepas",
+								"33ccaa9d-4710-9942-002d-1b5cb9912e5d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/vinos/4823ad54-0a3a-38b8-adf6-795512994a4f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"vinos",
+								"4823ad54-0a3a-38b8-adf6-795512994a4f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/vinos?anio=2020&orden=nombre&reverso=no",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"vinos"
+							],
+							"query": [
+								{
+									"key": "anio",
+									"value": "2020"
+								},
+								{
+									"key": "orden",
+									"value": "nombre"
+								},
+								{
+									"key": "reverso",
+									"value": "no"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/vinos?anio=2020&orden=nombre&reverso=si",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"vinos"
+							],
+							"query": [
+								{
+									"key": "anio",
+									"value": "2020"
+								},
+								{
+									"key": "orden",
+									"value": "nombre"
+								},
+								{
+									"key": "reverso",
+									"value": "si"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todas las cepas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/cepas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"cepas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cepa 'Malbec'",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/cepas/e076a2c8-b1f5-136e-8319-0ee0b5c02091",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"cepas",
+						"e076a2c8-b1f5-136e-8319-0ee0b5c02091"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todas las bodegas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/bodegas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"bodegas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bodega 'Proyecto Malbec'",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/bodegas/e45cf923-3843-91a3-90df-879c8269c5fc",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"bodegas",
+						"e45cf923-3843-91a3-90df-879c8269c5fc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todos los vinos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/vinos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"vinos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vino 'Sottano'",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/vinos/c0b72697-1295-b366-0dd7-d473cb35f0cf",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"vinos",
+						"c0b72697-1295-b366-0dd7-d473cb35f0cf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todas las bodegas orden=nombre y reverso=no",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/bodegas?orden=nombre",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"bodegas"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "nombre"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todas las bodegas orden=nombre y reverso=si",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/bodegas?orden=nombre&reverso=si",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"bodegas"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "nombre"
+						},
+						{
+							"key": "reverso",
+							"value": "si"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todas las bodegas orden=vinos y reverso=no",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/bodegas?orden=vinos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"bodegas"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "vinos"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todas las bodegas orden=vinos y reverso=si",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/bodegas?orden=vinos&reverso=si",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"bodegas"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "vinos"
+						},
+						{
+							"key": "reverso",
+							"value": "si"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todas las cepas orden=nombre y reverso=no",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/cepas?orden=nombre&reverso=no",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"cepas"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "nombre"
+						},
+						{
+							"key": "reverso",
+							"value": "no"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todas las cepas orden=nombre y reverso=si",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/cepas?orden=nombre&reverso=si",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"cepas"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "nombre"
+						},
+						{
+							"key": "reverso",
+							"value": "si"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todos los vinos anio=2019",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/vinos?anio=2019",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"vinos"
+					],
+					"query": [
+						{
+							"key": "anio",
+							"value": "2019"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todos los vinos orden=nombre y reverso=no",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/vinos?orden=nombre",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"vinos"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "nombre"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todos los vinos orden=nombre y reverso=si",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/vinos?orden=nombre&reverso=si",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"vinos"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "nombre"
+						},
+						{
+							"key": "reverso",
+							"value": "si"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todos los vinos orden=bodega y reverso=no",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/vinos?orden=bodega&reverso=no",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"vinos"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "bodega"
+						},
+						{
+							"key": "reverso",
+							"value": "no"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todos los vinos anio=2022, ordenado=nombre y reverso=si",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/vinos?anio=2022&orden=nombre&reverso=si",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"vinos"
+					],
+					"query": [
+						{
+							"key": "anio",
+							"value": "2022"
+						},
+						{
+							"key": "orden",
+							"value": "nombre"
+						},
+						{
+							"key": "reverso",
+							"value": "si"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todos los vinos ordenado=cepas y reverso= no",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/vinos?orden=cepas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"vinos"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "cepas"
+						}
+					]
+				},
+				"description": "Ordenado por la cantidad de cepas"
+			},
+			"response": []
+		},
+		{
+			"name": "Todos los vinos ordenado=cepas y reverso=si",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/vinos?orden=cepas&reverso=si",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"vinos"
+					],
+					"query": [
+						{
+							"key": "orden",
+							"value": "cepas"
+						},
+						{
+							"key": "reverso",
+							"value": "si"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
